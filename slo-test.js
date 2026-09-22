@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 20, duration: '1m',
+  vus: 20, duration: '2m',
   thresholds: {
     'http_req_duration{name:cart}': ['p(95)<57'], // Performance SLO 37.87 * 1.5 = 56.805
     'http_req_failed{name:pay}': ['rate<0.08'],  // Reliability SLO
